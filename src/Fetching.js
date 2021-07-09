@@ -15,7 +15,7 @@ export const Fetching = () => {
 
 
     return (
-        <>
+        <div>
             <h1>Fetching from https://jsonplaceholder.typicode.com</h1>
             <button onClick={fetchPost}>Fetching</button>
             {
@@ -27,6 +27,6 @@ export const Fetching = () => {
 
 
 
-        </>
+        </div>
     )
 }
