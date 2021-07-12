@@ -10,21 +10,20 @@ export const Fetching = () => {
         dispatch(loadPostStart())
     }
 
-    const state = useSelector(state => state.appReducer)
+    const state = useSelector((state) => ({ ...state.appReducer }))
     console.log(state)
 
 
     return (
         <div>
             <h1>Fetching from https://jsonplaceholder.typicode.com</h1>
-            <button onClick={fetchPost}>Fetching</button>
             {
                 !state.loading && state.posts.map((post) => (
-                    <li key={post.id}><h2>{post.title}</h2></li>
-
+                    <li key={post.id}>{post.title}</li>
                 ))
             }
 
+            <button onClick={fetchPost}>Fetching</button>
 
 
         </div>

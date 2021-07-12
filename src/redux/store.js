@@ -3,7 +3,7 @@ import createSagaMiddleware from 'redux-saga'
 
 import { rootReducer } from "./rootReducer";
 
-import rootSaga from "./sagas";
+import { onLoadPost } from "./sagas";
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -13,4 +13,4 @@ const enhancer = composeEnhancers(applyMiddleware(sagaMiddleware))
 
 export const store = createStore(rootReducer, enhancer)
 
-sagaMiddleware.run(rootSaga)
+sagaMiddleware.run(onLoadPost)

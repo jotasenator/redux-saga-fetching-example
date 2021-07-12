@@ -12,13 +12,9 @@ export function* onLoadPostStartAsync() {
     }
 }
 
+
 export function* onLoadPost() {
     yield takeLatest('LOAD_POST_START', onLoadPostStartAsync)
 
 }
 
-export default function* rootSaga() {
-    yield ([
-        onLoadPost(),
-    ])
-}
